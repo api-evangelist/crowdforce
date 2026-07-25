@@ -1,7 +1,25 @@
 aid: crowdforce
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/crowdforce.png
 name: CrowdForce
-description: CrowdForce is a company surfaced as a portfolio company of 500-global and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: CrowdForce was a Nigerian fintech that operated the PayForce agent-banking
+  network, deploying point-of-sale and digital financial-services agents to extend
+  cash-in/cash-out, bill payments, and banking access to underbanked communities across
+  Nigeria. Backed by 500 Global, its PayForce merchant/agent business merged with FairMoney's
+  Fusion in 2023. As of this enrichment pass the crowdforce.io domain no longer serves an
+  active product or developer surface. The homepage renders an empty Cloudflare-fronted
+  shell and the /payforce path returns unrelated third-party (gambling) spam content, so
+  no public API, developer portal, SDKs, or documentation could be verified.
 url: https://raw.githubusercontent.com/api-evangelist/crowdforce/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,11 +27,22 @@ x-backed-by:
 - 500-global
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-status: inactive-domain-parked
+x-enrichment-note: >-
+  Enrichment pass 2026-07-18 found no API surface. Domain security was probed live;
+  /.well-known/* all 404; api.crowdforce.io does not resolve; site content is parked/spam.
+  No developer links wired to avoid fabrication.
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
+- Fintech
+- Payments
+- Agent Banking
+- Financial Inclusion
+- Nigeria
+- Africa
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -21,5 +50,12 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/crowdforce-domain-security.yml
 - type: Website
   url: https://crowdforce.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
