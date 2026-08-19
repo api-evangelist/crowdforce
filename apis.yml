@@ -32,7 +32,7 @@ x-enrichment-note: >-
   Enrichment pass 2026-07-18 found no API surface. Domain security was probed live;
   /.well-known/* all 404; api.crowdforce.io does not resolve; site content is parked/spam.
   No developer links wired to avoid fabrication.
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-07-17'
 modified: '2026-07-18'
 tags:
