@@ -2,18 +2,24 @@ generated: '2026-07-18'
 method: searched
 source: live probes of /.well-known/* on crowdforce.io
 host: https://crowdforce.io
-note: >-
-  No /.well-known documents are published. The api.crowdforce.io host does not
-  resolve (DNS NXDOMAIN). The crowdforce.io site is a Cloudflare-fronted SPA that
-  renders an empty shell and no developer/discovery surface was found.
-documents:
-- path: /.well-known/security.txt
-  status: 404
-- path: /.well-known/openid-configuration
-  status: 404
-- path: /.well-known/oauth-authorization-server
-  status: 404
-- path: /.well-known/api-catalog
-  status: 404
-- path: /.well-known/ai-plugin.json
-  status: 404
+note: No /.well-known documents are published. The api.crowdforce.io host does not resolve (DNS NXDOMAIN).
+  The crowdforce.io site is a Cloudflare-fronted SPA that renders an empty shell and no developer/discovery
+  surface was found.
+hosts:
+- host: https://crowdforce.io
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.
